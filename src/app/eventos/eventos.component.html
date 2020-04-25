@@ -1,0 +1,24 @@
+<div>
+
+    <h1>Parabéns!</h1>
+    <h4>Seu componente está sendo exibido em tela</h4>
+    <hr>
+    <h5>Como aparece o seu evento abaixo?</h5>
+    <div *ngFor= "let events of evento">
+        <div style="margin-top:30px">
+            Evento: {{events?.name}}
+        </div>
+        <div>
+            Data: <app-data [evento]="events.date"></app-data>
+        </div>
+        <div>
+            Hora: {{events.time}}
+        </div>
+        <div *ngIf="events.location?.address">
+            Endereço: 
+            <app-endereco [localizacao]="events.location?.address"></app-endereco>, 
+            <app-endereco [localizacao]="events.location?.city"></app-endereco>,
+            <app-endereco [localizacao]="events.location?.country"></app-endereco>
+        </div>
+    </div>
+</div>
