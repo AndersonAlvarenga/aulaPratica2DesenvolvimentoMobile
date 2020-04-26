@@ -11,7 +11,6 @@ export class DataComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("teste");
    console.log(this.evento);
   }
 

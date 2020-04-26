@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-endereco',
@@ -6,10 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./endereco.component.css']
 })
 export class EnderecoComponent implements OnInit {
-@Input() localizacao;
+  @Input() localizacao;
+  @Input() nome;
+  @Output() atualizaEndereco = new EventEmitter();
   constructor() { }
+  atualizar(local,cidade,pais){
+this.atualizaEndereco.emit({name:this.nome,location:{address: local, city: cidade,country: pais}})
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

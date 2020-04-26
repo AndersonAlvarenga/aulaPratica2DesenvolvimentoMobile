@@ -14,11 +14,10 @@
         <div>
             Hora: {{events.time}}
         </div>
-        <div *ngIf="events.location?.address">
-            Endereço: 
-            <app-endereco [localizacao]="events.location?.address"></app-endereco>, 
-            <app-endereco [localizacao]="events.location?.city"></app-endereco>,
-            <app-endereco [localizacao]="events.location?.country"></app-endereco>
+        <div > 
+            <ng-container *ngIf="events.location !==undefined">
+                <app-endereco [localizacao]="events.location" [nome]="events.name" (atualizaEndereco)="receberEnderecoAtualizado($event)"></app-endereco>
+            </ng-container>
         </div>
     </div>
 </div>
