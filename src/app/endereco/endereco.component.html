@@ -1,10 +1,4 @@
-<div>
-    <label for="address"> Endereço: </label><br>
-    <input ref-address type="text" id="address" name="address"><br>
-    <label for="city"> Cidade: </label><br>
-    <input ref-city type="text" id="city" name="city"><br>
-    <label for="country"> Pais: </label><br>
-    <input ref-country type="text" id="country" name="country">
-
-    <button (click)="atualizar(address.value,city.value,country.value)">Confirmar</button>
-</div>
+<h1>{{locale.address}}</h1>
+<h1>{{locale.city}}</h1>
+<h1>{{locale.country}}</h1>
+<button (click)="atualizarDados()">Atualizar Endereço</button>

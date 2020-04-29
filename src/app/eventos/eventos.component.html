@@ -15,9 +15,7 @@
             Hora: {{events.time}}
         </div>
         <div > 
-            <ng-container *ngIf="events.location !==undefined">
-                <app-endereco [localizacao]="events.location" [nome]="events.name" (atualizaEndereco)="receberEnderecoAtualizado($event)"></app-endereco>
-            </ng-container>
+            <app-endereco *ngIf="events.location" [locale]="events.location" (atualizaDado)="recebeDados($event)"></app-endereco>
         </div>
     </div>
 </div>

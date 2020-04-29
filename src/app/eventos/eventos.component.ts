@@ -22,14 +22,15 @@ export class EventosComponent implements OnInit {
 
 
   constructor() { }
-    receberEnderecoAtualizado(dados) {
-      for (let evento1 of this.evento) {
-        if (evento1.name === dados.name) {
-        evento1.location=dados.location;
-        console.log(evento1.location);
-        }
+    
+  recebeDados(resposta){
+    this.evento.forEach(evento=>{
+      if(evento.name==resposta.nome){
+evento.location=resposta.local;
       }
-    }
+    });
+    
+  }
   
 
 
